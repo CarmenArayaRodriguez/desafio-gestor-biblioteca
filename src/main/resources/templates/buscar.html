@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Buscar Libro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">Buscar Libro</h1>
+    <form th:action="@{/buscar}" method="get">
+        <div class="form-group">
+            <label for="id">ID del Libro:</label>
+            <input type="text" id="id" name="id" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+    <div th:if="${resultado}" class="mt-4">
+        <h2>Resultado:</h2>
+        <p th:text="${resultado}"></p>
+    </div>
+    <a th:href="@{/}" class="btn btn-secondary mt-4">Volver al Inicio</a>
+</div>
+</body>
+</html>
